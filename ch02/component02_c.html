@@ -1,0 +1,43 @@
+<div id="app">
+    <ul>
+        <product-item
+        v-for="item in productList"
+        v-bind:product="item"
+        v-bind:key="item.prdId"></product-item>
+    </ul>
+</div>
+<template id="product_template">
+    <li><img :src="product.image" :alt="product.name">
+        <div>{{ product.name }}</div></li>
+</template>
+<script src="https://unpkg.com/vue"></script>
+<script>
+Vue.component('product-item', {
+    props: ['product'],
+    template: '#product_template'
+})
+var app = new Vue({
+    el: '#app',
+    data: {
+        productList: [
+            {prdId: 7977, name: '참치마요네즈', image: "./images/prd7977_200.jpg"},
+            {prdId: 7980, name: '전주비빔밥', image: "./images/prd7980_200.jpg"},
+            {prdId: 2834, name: '멸치고추', image: "./images/prd2834_200.jpg"},
+        ]
+    }
+})
+</script>
+<style>
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    li {
+        display: inline-block;
+        margin: 2px;
+    }
+    li img {
+        width: 100px;
+        border-radius: 5px;
+    }
+</style>

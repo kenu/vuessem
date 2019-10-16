@@ -1,0 +1,17 @@
+<div id="app">
+    <my-button message="추가"></my-button>
+    <my-button message="삭제"></my-button>
+</div>
+<template id="btn">
+    <button>{{ message }}</button>
+</template>
+<script src="https://unpkg.com/vue"></script>
+<script>
+    Vue.component('my-button', {
+        template: '#btn',
+        props: ['message']
+    })
+    var app = new Vue({
+        el: '#app'
+    })
+</script>
