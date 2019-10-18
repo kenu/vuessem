@@ -1,20 +1,16 @@
 <div id="app">
-    <ul>
-        <li v-for="product in products">
-            {{ product }}
-        </li>
-    </ul>
+  <ul>
+    <li v-for="product in products">
+      {{ product }}
+    </li>
+  </ul>
 </div>
 <script src="https://unpkg.com/vue"></script>
 <script>
-    var app = new Vue({
-        el: '#app',
-        data: {
-            products: [
-                '햄버거',
-                '피자',
-                '샌드위치'
-            ]
-        }  
-    })
+  var app = new Vue({
+    el: '#app',
+    data: {
+      products: ['햄버거', '피자', '샌드위치']
+    }
+  });
 </script>
