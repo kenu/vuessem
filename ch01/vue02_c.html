@@ -1,25 +1,25 @@
 <div id="app">
-  <ul>
-    <li v-for="product in products">
-      {{ product.quantity }} {{ product.name }}
-    </li>
-  </ul>
+    <ul>
+        <li v-for="product in products">
+            {{ product.quantity }} {{ product.name }}
+        </li>
+    </ul>
 </div>
 <script src="https://unpkg.com/vue"></script>
 <script>
-  var app = new Vue({
-    el: '#app',
-    data: {
-      products: []
-    },
-    created() {
-      fetch('https://api.myjson.com/bins/kj64a')
-        .then(function(response) {
-          return response.json();
-        })
-        .then(function(json) {
-          app.products = json.products;
-        });
-    }
-  });
+    var app = new Vue({
+        el: '#app',
+        data: {
+            products: [],
+        },
+        created() {
+            fetch('https://api.myjson.com/bins/kj64a')
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (json) {
+                    app.products = json.products;
+                });
+        },
+    });
 </script>

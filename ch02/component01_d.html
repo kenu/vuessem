@@ -1,27 +1,23 @@
 <div id="app">
-  <my-button
-    v-for="btn in buttons"
-    v-bind:message="btn.text"
-    v-bind:key="btn.id"
-  ></my-button>
+    <my-button v-for="btn in buttons" v-bind:message="btn.text" v-bind:key="btn.id"></my-button>
 </div>
 <template id="btn">
-  <button>{{ message }}</button>
+    <button>{{ message }}</button>
 </template>
 <script src="https://unpkg.com/vue"></script>
 <script>
-  Vue.component('my-button', {
-    template: '#btn',
-    props: ['message']
-  });
-  var app = new Vue({
-    el: '#app',
-    data: {
-      buttons: [
-        { id: 0, text: '추가' },
-        { id: 1, text: '수정' },
-        { id: 2, text: '삭제' }
-      ]
-    }
-  });
+    Vue.component('my-button', {
+        template: '#btn',
+        props: ['message']
+    });
+    var app = new Vue({
+        el: '#app',
+        data: {
+            buttons: [
+                { id: 0, text: '추가' },
+                { id: 1, text: '수정' },
+                { id: 2, text: '삭제' }
+            ]
+        }
+    });
 </script>
